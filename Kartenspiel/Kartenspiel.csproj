@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EF108720-3D33-4793-8147-CA3B12C862F8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Kartenspiel</RootNamespace>
+    <AssemblyName>Kartenspiel</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Fenster\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fenster\Spielfeld.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fenster\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenster\Spielfeld.xaml.cs">
+      <DependentUpon>Spielfeld.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Klassen\Karte.cs" />
+    <Compile Include="Klassen\Spieler.cs" />
+    <Compile Include="Klassen\Spiel.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Memes\cardback.png" />
+    <Resource Include="Memes\Daten.txt" />
+    <Resource Include="Memes\Legedary\l2.png" />
+    <Resource Include="Memes\Legendary\l1.png" />
+    <Resource Include="Memes\Legendary\L2.png" />
+    <Resource Include="Memes\Legendary\L3.png" />
+    <Resource Include="Memes\Legendary\L4.png" />
+    <Resource Include="Memes\Legendary\L5.png" />
+    <Resource Include="Memes\Legendary\L6.png" />
+    <Resource Include="Memes\Legendary\L7.png" />
+    <Resource Include="Memes\Legendary\L8.png" />
+    <Resource Include="Memes\Magic\M1.png" />
+    <Resource Include="Memes\Magic\M10.png" />
+    <Resource Include="Memes\Magic\M11.png" />
+    <Resource Include="Memes\Magic\M12.png" />
+    <Resource Include="Memes\Magic\M2.png" />
+    <Resource Include="Memes\Magic\M3.png" />
+    <Resource Include="Memes\Magic\M4.png" />
+    <Resource Include="Memes\Magic\M5.png" />
+    <Resource Include="Memes\Magic\M6.png" />
+    <Resource Include="Memes\Magic\M7.png" />
+    <Resource Include="Memes\Magic\M8.png" />
+    <Resource Include="Memes\Magic\M9.png" />
+    <Resource Include="Memes\Normal\N1.png" />
+    <Resource Include="Memes\Normal\N10.png" />
+    <Resource Include="Memes\Normal\N11.png" />
+    <Resource Include="Memes\Normal\N12.png" />
+    <Resource Include="Memes\Normal\N13.png" />
+    <Resource Include="Memes\Normal\N14.png" />
+    <Resource Include="Memes\Normal\N15.png" />
+    <Resource Include="Memes\Normal\N16.png" />
+    <Resource Include="Memes\Normal\N17.png" />
+    <Resource Include="Memes\Normal\N18.png" />
+    <Resource Include="Memes\Normal\N19.png" />
+    <Resource Include="Memes\Normal\N2.png" />
+    <Resource Include="Memes\Normal\N20.png" />
+    <Resource Include="Memes\Normal\N21.png" />
+    <Resource Include="Memes\Normal\N22.png" />
+    <Resource Include="Memes\Normal\N23.png" />
+    <Resource Include="Memes\Normal\N24.png" />
+    <Resource Include="Memes\Normal\N25.png" />
+    <Resource Include="Memes\Normal\N26.png" />
+    <Resource Include="Memes\Normal\N27.png" />
+    <Resource Include="Memes\Normal\N28.png" />
+    <Resource Include="Memes\Normal\N29.png" />
+    <Resource Include="Memes\Normal\N3.png" />
+    <Resource Include="Memes\Normal\N30.png" />
+    <Resource Include="Memes\Normal\N4.png" />
+    <Resource Include="Memes\Normal\N5.png" />
+    <Resource Include="Memes\Normal\N6.png" />
+    <Resource Include="Memes\Normal\N7.png" />
+    <Resource Include="Memes\Normal\N8.png" />
+    <Resource Include="Memes\Normal\N9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Logo1.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

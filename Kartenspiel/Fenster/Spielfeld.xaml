@@ -1,0 +1,64 @@
+﻿<Page x:Class="Kartenspiel.Fenster.Spielfeld"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Kartenspiel.Fenster"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Spielfeld">
+
+    <DockPanel Name="dplSpielfeld" LastChildFill="True" Loaded="DplSpielfeld_Loaded">
+        <DockPanel Name="pnlSpieler1" DockPanel.Dock="Top" Background="LightSeaGreen">
+            <Label Name="lblSpieler1" Content="Spieler 1:" DockPanel.Dock="Top" HorizontalAlignment="Center" />
+            <DockPanel DockPanel.Dock="Right" Width="150">
+                <Label Name="lblS1KarteName" Content="Name" DockPanel.Dock="Top" />
+                <Label Name="lblS1KartInfoLeben" Content="Leben: xx" DockPanel.Dock="Top" />
+                <Label Name="lblS1KartInfoAngriff" Content="Angriff: xx" DockPanel.Dock="Bottom" />
+            </DockPanel>
+            <DockPanel Name="Spieler1Feld" DockPanel.Dock="Bottom" LastChildFill="False" HorizontalAlignment="Center" Height="100">
+                <Image x:Name="imgSpieler1Feld1" Margin="5,0,5,0" Width="100" Height="130" Source="/Kartenspiel;component/Memes/cardback.png" MouseEnter="ImgSpielerFeld_MouseEnter" MouseLeave="ImgSpielerFeld_MouseLeave" MouseLeftButtonDown="ImgSpielerFeld_MouseLeftButtonDown"/>
+                <Image x:Name="imgSpieler1Feld2" Margin="5,0,5,0" Width="100" Height="130" Source="/Kartenspiel;component/Memes/cardback.png" MouseEnter="ImgSpielerFeld_MouseEnter" MouseLeave="ImgSpielerFeld_MouseLeave" MouseLeftButtonDown="ImgSpielerFeld_MouseLeftButtonDown"/>
+                <Image x:Name="imgSpieler1Feld3" Margin="5,0,5,0" Width="100" Height="130" Source="/Kartenspiel;component/Memes/cardback.png" MouseEnter="ImgSpielerFeld_MouseEnter" MouseLeave="ImgSpielerFeld_MouseLeave" MouseLeftButtonDown="ImgSpielerFeld_MouseLeftButtonDown"/>
+                <Image x:Name="imgSpieler1Feld4" Margin="5,0,5,0" Width="100" Height="130" Source="/Kartenspiel;component/Memes/cardback.png" MouseEnter="ImgSpielerFeld_MouseEnter" MouseLeave="ImgSpielerFeld_MouseLeave" MouseLeftButtonDown="ImgSpielerFeld_MouseLeftButtonDown"/>
+            </DockPanel>
+        </DockPanel>
+
+        <DockPanel Name="pnlSpieler" DockPanel.Dock="Bottom" Background="LightSalmon">
+            <Label Name="lblSpieler2" Content="Spieler 2:" DockPanel.Dock="Top" HorizontalAlignment="Center" />
+            <DockPanel Name="Spieler2Feld" DockPanel.Dock="Bottom" LastChildFill="False" HorizontalAlignment="Center" Height="100">
+                <Image x:Name="imgSpieler2Feld1" Margin="5,0,5,0" Width="100" Height="130" Source="/Kartenspiel;component/Memes/cardback.png" MouseEnter="ImgSpielerFeld_MouseEnter" MouseLeave="ImgSpielerFeld_MouseLeave" MouseLeftButtonDown="ImgSpielerFeld_MouseLeftButtonDown"/>
+                <Image x:Name="imgSpieler2Feld2" Margin="5,0,5,0" Width="100" Height="130" Source="/Kartenspiel;component/Memes/cardback.png" MouseEnter="ImgSpielerFeld_MouseEnter" MouseLeave="ImgSpielerFeld_MouseLeave" MouseLeftButtonDown="ImgSpielerFeld_MouseLeftButtonDown"/>
+                <Image x:Name="imgSpieler2Feld3" Margin="5,0,5,0" Width="100" Height="130" Source="/Kartenspiel;component/Memes/cardback.png" MouseEnter="ImgSpielerFeld_MouseEnter" MouseLeave="ImgSpielerFeld_MouseLeave" MouseLeftButtonDown="ImgSpielerFeld_MouseLeftButtonDown"/>
+                <Image x:Name="imgSpieler2Feld4" Margin="5,0,5,0" Width="100" Height="130" Source="/Kartenspiel;component/Memes/cardback.png" MouseEnter="ImgSpielerFeld_MouseEnter" MouseLeave="ImgSpielerFeld_MouseLeave" MouseLeftButtonDown="ImgSpielerFeld_MouseLeftButtonDown"/>
+            </DockPanel>
+        </DockPanel>
+
+        <DockPanel Name="pnlDeckZiehen" DockPanel.Dock="Right" Background="BlanchedAlmond">
+            <Button Name="btnKarteZiehen" Content="Ziehen" DockPanel.Dock="Top" Click="BtnKarteZiehen_Click" />
+            <Button Name="btnRundeBeenden" Content="Runde Beenden" DockPanel.Dock="Bottom" Click="BtnRundeBeenden_Click"/>
+            <Image Tag="DrPhil" Name="imgDeckZiehen" Width="100" Height="130" Source="/Kartenspiel;component/Memes/Normal/N6.png" />
+        </DockPanel>
+
+        <DockPanel Name="pnlDeckTot" DockPanel.Dock="Left" Background="BlanchedAlmond">
+            <Label Content="Tote Karten:" DockPanel.Dock="Top" HorizontalAlignment="Center" />
+            <Image Name="imgDeckTot" Width="100" Height="130" Source="/Kartenspiel;component/Memes/cardback.png"/>
+        </DockPanel>
+
+        <DockPanel LastChildFill="False" Background="White">
+            <DockPanel Name="Spieler1Spielfeld" DockPanel.Dock="Top" LastChildFill="False" HorizontalAlignment="Center" Height="100">
+                <Image Uid="0" x:Name="imgSpieler1Spielfeld1" Margin="5,0,5,0" Width="100" Height="130" MouseLeftButtonDown="ImgSpielerFeld_Angreifen_Click" MouseEnter="ImgSpielerFeld_MouseEnter" MouseLeave="ImgSpielerFeld_MouseLeave" Source="/Kartenspiel;component/Memes/cardback.png"/>
+                <Image Uid="1" x:Name="imgSpieler1Spielfeld2" Margin="5,0,5,0" Width="100" Height="130" MouseLeftButtonDown="ImgSpielerFeld_Angreifen_Click" MouseEnter="ImgSpielerFeld_MouseEnter" MouseLeave="ImgSpielerFeld_MouseLeave" Source="/Kartenspiel;component/Memes/cardback.png"/>
+                <Image Uid="2" x:Name="imgSpieler1Spielfeld3" Margin="5,0,5,0" Width="100" Height="130" MouseLeftButtonDown="ImgSpielerFeld_Angreifen_Click" MouseEnter="ImgSpielerFeld_MouseEnter" MouseLeave="ImgSpielerFeld_MouseLeave" Source="/Kartenspiel;component/Memes/cardback.png"/>
+                <Image Uid="3" x:Name="imgSpieler1Spielfeld4" Margin="5,0,5,0" Width="100" Height="130" MouseLeftButtonDown="ImgSpielerFeld_Angreifen_Click" MouseEnter="ImgSpielerFeld_MouseEnter" MouseLeave="ImgSpielerFeld_MouseLeave" Source="/Kartenspiel;component/Memes/cardback.png"/>
+            </DockPanel>
+
+            <DockPanel Name="Spieler2Spielfeld" DockPanel.Dock="Bottom" LastChildFill="False" HorizontalAlignment="Center" Height="100">
+                <Image Uid="0" x:Name="imgSpieler2Spielfeld1" Margin="5,0,5,0" Width="100" Height="130" MouseLeftButtonDown="ImgSpielerFeld_Angreifen_Click" MouseEnter="ImgSpielerFeld_MouseEnter" MouseLeave="ImgSpielerFeld_MouseLeave" Source="/Kartenspiel;component/Memes/cardback.png"/>
+                <Image Uid="1" x:Name="imgSpieler2Spielfeld2" Margin="5,0,5,0" Width="100" Height="130" MouseLeftButtonDown="ImgSpielerFeld_Angreifen_Click" MouseEnter="ImgSpielerFeld_MouseEnter" MouseLeave="ImgSpielerFeld_MouseLeave" Source="/Kartenspiel;component/Memes/cardback.png"/>
+                <Image Uid="2" x:Name="imgSpieler2Spielfeld3" Margin="5,0,5,0" Width="100" Height="130" MouseLeftButtonDown="ImgSpielerFeld_Angreifen_Click" MouseEnter="ImgSpielerFeld_MouseEnter" MouseLeave="ImgSpielerFeld_MouseLeave" Source="/Kartenspiel;component/Memes/cardback.png"/>
+                <Image Uid="3" x:Name="imgSpieler2Spielfeld4" Margin="5,0,5,0" Width="100" Height="130" MouseLeftButtonDown="ImgSpielerFeld_Angreifen_Click" MouseEnter="ImgSpielerFeld_MouseEnter" MouseLeave="ImgSpielerFeld_MouseLeave" Source="/Kartenspiel;component/Memes/cardback.png"/>
+            </DockPanel>
+        </DockPanel>
+    </DockPanel>
+</Page>
